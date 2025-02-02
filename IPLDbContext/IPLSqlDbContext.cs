@@ -10,9 +10,9 @@ namespace IPLDbContext
 {
     public class IPLSqlDbContext : DbContext
     {
-        DbSet<Team> teams { get; set; }
-        DbSet<Coach> Coaches { get; set; }
-        DbSet<Match> Matches { get; set; }
+        public DbSet<Team> teams { get; set; }
+        public DbSet<Coach> Coaches { get; set; }
+        public DbSet<Match> Matches { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
