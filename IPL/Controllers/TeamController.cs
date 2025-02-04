@@ -47,7 +47,7 @@ namespace IPL.Controllers
 
             if (teamId < 1)
             {
-                return BadRequest("CoachId should be positive interger. Invalid coachId specified : " + teamId);
+                return BadRequest("TeamId should be positive interger. Invalid teamId specified : " + teamId);
             }
 
             try
@@ -57,7 +57,7 @@ namespace IPL.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Error occured while making get request to the GetCoachById" + ex.Message);
+                return StatusCode(500, "Error occured while making get request to the GetTeamById" + ex.Message);
 
             }
 
