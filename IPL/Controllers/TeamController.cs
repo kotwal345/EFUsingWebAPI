@@ -63,5 +63,36 @@ namespace IPL.Controllers
 
         }
 
+
+        [HttpGet("GetAllTeams")]
+        public IActionResult GetAllTeams([FromQuery] int pageIndex, [FromQuery] int pageSize)
+        {
+            if (pageIndex < 0)
+            {
+                return BadRequest("Page index must be equal or greater than 0 . Specified value : " + pageIndex);
+            }
+
+            if (pageSize < 0 || pageSize > 5)
+            {
+                return BadRequest("Page Size must be greater than 0 and less than 6 . Specified value : " + pageSize);
+            }
+
+            int skip = pageIndex * pageSize;
+            int limit = pageSize;
+
+            var response = teamService.GetAllTeams(limit, skip);
+
+            return Ok(response);
+        }
+
+
+        [HttpDelete("DeleteTeamById")]
+        public async Task<IActionResult> DeleteTeamById([FromQuery] int teamId)
+        {
+
+            await teamService.RemoveTeamAsync(teamId);
+
+            return NoContent();
+        }
     }
 }
