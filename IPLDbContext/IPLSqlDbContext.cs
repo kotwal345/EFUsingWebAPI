@@ -60,6 +60,25 @@ namespace IPLDbContext
                     Name = "RCB",
                     CreatedDate = new DateTime(2025, 1, 1)
                 });
+            modelBuilder.Entity<Match>().HasData(
+                new Match
+                {
+                    Id = 1,
+                    Name = "MI vs CSK",
+                    CreatedDate = new DateTime(2025, 3, 23)
+                },
+                new Match
+                {
+                    Id = 2,
+                    Name = "RCB vs LSG",
+                    CreatedDate = new DateTime(2025, 3, 24)
+                },
+                new Match
+                {
+                    Id = 3,
+                    Name = "DC vs KKR",
+                    CreatedDate = new DateTime(2025, 3, 25)
+                });
 
         }
     }

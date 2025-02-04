@@ -15,6 +15,8 @@ builder.Services.AddSingleton<ICoachService, CoachService>();
 
 builder.Services.AddSingleton<ITeamService, TeamService>();
 
+builder.Services.AddSingleton<IMatchService, MatchService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
