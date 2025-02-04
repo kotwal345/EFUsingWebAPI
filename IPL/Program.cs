@@ -13,6 +13,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IPLSqlDbContext>();
 builder.Services.AddSingleton<ICoachService, CoachService>();
 
+builder.Services.AddSingleton<ITeamService, TeamService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
